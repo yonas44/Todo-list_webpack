@@ -20,7 +20,10 @@ In this project I built a simple HTML list of To Do tasks using webpack and serv
 
 ### Setup
 
-- Clone the project using this link: git@github.com:yonas44/Todo-list_webpack.git
+Run git clone https://github.com/yonas44/Todo-list_webpack.git
+Run cd Todo-list_webpack.git
+Run npm install
+Run npm start
 
 ## Authors
 
