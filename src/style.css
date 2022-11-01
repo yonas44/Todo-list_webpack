@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: lightgrey;
+  display: flex;
+  height: 100vh;
+}
+
+.Todo {
+  margin: auto;
+  width: 400px;
+  background: white;
+  box-shadow: 1px 1px 5px black;
+}
+
+#first,
+#second {
+  margin: 0;
+  width: 100%;
+  padding: 0 10px;
+  display: flex;
+  height: 40px;
+  border-bottom: 1px rgb(214, 212, 212) solid;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#input {
+  font-style: italic;
+  width: 80%;
+  outline: none;
+  border: none;
+}
+
+.bi {
+  color: grey;
+}
+
+#clear {
+  height: 50px;
+  display: flex;
+  cursor: pointer;
+  color: grey;
+  align-items: center;
+  justify-content: center;
+  background: lightgrey;
+}
