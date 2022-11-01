@@ -3,7 +3,7 @@ A todo-list project built with Webpack and ES6 modules
 
 # Project Name
 
-> Todo-list_webpack
+> To-Do List
 
 ## Built With
 
@@ -12,7 +12,11 @@ A todo-list project built with Webpack and ES6 modules
 
 ## Getting Started
 
-For this project we implemented adding and removing of books using JavaScript
+In this project I built a simple HTML list of To Do tasks using webpack and served by a webpack dev server along with ES6 modules.
+
+- The webpage will allow users to add lists easily using the input field.
+- The completed tasks will each have a line through, implying the task is complete.
+- The completed tasks can be removed all together using a button.
 
 ### Setup
 
