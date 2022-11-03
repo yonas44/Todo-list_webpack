@@ -17,7 +17,7 @@ const lists = document.querySelector('.list');
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
-  const task = new Task(input.value, tasks.length);
+  const task = new Task(input.value);
   taskAdder(task, tasks);
   stringifier(tasks);
   TaskLoader(lists, tasks, taskEditor, stringifier);

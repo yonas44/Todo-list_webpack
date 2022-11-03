@@ -1,7 +1,7 @@
 export default class Task {
-  constructor(string, length) {
+  constructor(string) {
     this.string = string;
     this.bool = false;
-    this.index = length;
+    this.index = null;
   }
 }

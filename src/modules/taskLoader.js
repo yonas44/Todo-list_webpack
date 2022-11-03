@@ -15,7 +15,8 @@ function TaskLoader(lists, tasks, taskEditor) {
     const checkBox = document.createElement('input');
     checkBox.type = 'checkbox';
     checkBox.checked = task.bool;
-    task.index = index + 1;
+    tasks[index].index = index + 1;
+    stringifier(tasks);
 
     // Add event listener for checkbox
     checkBox.addEventListener('change', () => {
@@ -81,6 +82,7 @@ function TaskLoader(lists, tasks, taskEditor) {
     list.appendChild(form);
     lists.appendChild(list);
   });
+  console.log;
 }
 
 export default TaskLoader;
