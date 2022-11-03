@@ -82,7 +82,6 @@ function TaskLoader(lists, tasks, taskEditor) {
     list.appendChild(form);
     lists.appendChild(list);
   });
-  console.log;
 }
 
 export default TaskLoader;
