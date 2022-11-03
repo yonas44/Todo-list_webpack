@@ -2,10 +2,11 @@
 import { stringifier } from './taskMethods.js';
 
 function TaskLoader(lists, tasks, taskEditor) {
-  // Remove tasks before re-rendering
+  // Remove tasks before rendering the tasks
   while (lists.hasChildNodes()) {
     lists.removeChild(lists.firstChild);
   }
+
   // Map tasks inside the task container
   tasks.forEach((task, index) => {
     const list = document.createElement('li');
@@ -14,7 +15,7 @@ function TaskLoader(lists, tasks, taskEditor) {
     const checkBox = document.createElement('input');
     checkBox.type = 'checkbox';
     checkBox.checked = task.bool;
-    task.index = index;
+    task.index = index + 1;
 
     // Add event listener for checkbox
     checkBox.addEventListener('change', () => {
@@ -44,7 +45,6 @@ function TaskLoader(lists, tasks, taskEditor) {
       dots.className = 'bi bi-three-dots-vertical';
       form.classList.remove('on');
       if (task.bool === true) text.style.textDecoration = 'line-through';
-      TaskLoader(lists, tasks, taskEditor);
     });
 
     const dots = document.createElement('i');
@@ -53,38 +53,30 @@ function TaskLoader(lists, tasks, taskEditor) {
 
     // Add event listener for task input field
     text.addEventListener('click', () => {
-      const taskForm = document.querySelectorAll('.task-form');
-      taskForm.forEach((form, position) => {
-        if (position === index) {
-          form.classList.add('on');
-        } else {
-          form.classList.remove('on');
-          form.childNodes[2].className = 'bi bi-three-dots-vertical';
-          if (form.childNodes[0].checked === true) {
-            form.childNodes[1].style.textDecoration = 'line-through';
-          }
-        }
-      });
-
-      // Add on blur event listener for input field
-      text.addEventListener('blur', () => {
-        form.classList.remove('on');
-        form.childNodes[2].className = 'bi bi-three-dots-vertical';
-        if (form.childNodes[0].checked === true) {
-          form.childNodes[1].style.textDecoration = 'line-through';
-        }
-      });
-
+      form.classList.add('on');
       dots.className = 'bi bi-trash3';
+      dots.id = 'delete';
       text.style.textDecoration = 'none';
+    });
 
-      // Add event listener for remove button
-      dots.addEventListener('click', () => {
+    // Add event listener for remove button
+    dots.addEventListener('click', (event) => {
+      if (event.target.id === 'delete') {
         tasks.splice(index, 1);
         stringifier(tasks);
         TaskLoader(lists, tasks, taskEditor);
-      });
+      }
     });
+
+    // Add on blur event listener for input field
+    text.addEventListener('blur', () => {
+      form.classList.remove('on');
+      form.childNodes[2].className = 'bi bi-three-dots-vertical';
+      if (form.childNodes[0].checked === true) {
+        form.childNodes[1].style.textDecoration = 'line-through';
+      }
+    });
+
     form.append(checkBox, text, dots);
     list.appendChild(form);
     lists.appendChild(list);
