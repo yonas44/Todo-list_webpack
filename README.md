@@ -26,10 +26,11 @@ In this project I built a simple HTML list of To Do tasks using webpack and serv
 
 ### Setup
 
-Run git clone https://github.com/yonas44/Todo-list_webpack.git
-Run cd Todo-list_webpack.git
-Run npm install
-Run npm start
+To setup this project in your local machine simply run these steps:
+- git clone https://github.com/yonas44/Todo-list_webpack.git
+- cd Todo-list_webpack
+- npm install
+- npm start
 
 ## Authors
 
