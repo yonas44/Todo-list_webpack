@@ -2,12 +2,14 @@
 import { stringifier } from './taskMethods.js';
 
 function TaskLoader(lists, tasks, taskEditor) {
-  // Remove tasks before rendering the tasks
+  // Remove old childNodes before rendering new Nodes
+
   while (lists.hasChildNodes()) {
     lists.removeChild(lists.firstChild);
   }
 
   // Map tasks inside the task container
+
   tasks.forEach((task, index) => {
     const list = document.createElement('li');
     const form = document.createElement('form');
@@ -19,6 +21,7 @@ function TaskLoader(lists, tasks, taskEditor) {
     stringifier(tasks);
 
     // Add event listener for checkbox
+
     checkBox.addEventListener('change', () => {
       tasks[index].bool = !task.bool;
       if (task.bool === true) {
@@ -39,6 +42,7 @@ function TaskLoader(lists, tasks, taskEditor) {
     if (task.bool === true) text.style.textDecoration = 'line-through';
 
     // Add event listener for each added form
+
     form.addEventListener('submit', (event) => {
       event.preventDefault();
       text.blur();
@@ -53,6 +57,7 @@ function TaskLoader(lists, tasks, taskEditor) {
     dots.id = 'dots';
 
     // Add event listener for task input field
+
     text.addEventListener('click', () => {
       form.classList.add('on');
       dots.className = 'bi bi-trash3';
@@ -61,6 +66,7 @@ function TaskLoader(lists, tasks, taskEditor) {
     });
 
     // Add event listener for remove button
+
     dots.addEventListener('click', (event) => {
       if (event.target.id === 'delete') {
         tasks.splice(index, 1);
@@ -70,6 +76,7 @@ function TaskLoader(lists, tasks, taskEditor) {
     });
 
     // Add on blur event listener for input field
+
     text.addEventListener('blur', () => {
       form.classList.remove('on');
       form.childNodes[2].className = 'bi bi-three-dots-vertical';
@@ -77,7 +84,6 @@ function TaskLoader(lists, tasks, taskEditor) {
         form.childNodes[1].style.textDecoration = 'line-through';
       }
     });
-
     form.append(checkBox, text, dots);
     list.appendChild(form);
     lists.appendChild(list);
