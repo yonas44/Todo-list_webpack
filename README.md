@@ -20,6 +20,10 @@ In this project I built a simple HTML list of To Do tasks using webpack and serv
 - The completed tasks will each have a line through, implying the task is complete.
 - The completed tasks can be removed all together using a button.
 
+### Deployment
+
+[Live Demo](https://yonas44.github.io/Todo-list_webpack/)
+
 ### Setup
 
 Run git clone https://github.com/yonas44/Todo-list_webpack.git
