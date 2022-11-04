@@ -10,6 +10,8 @@ A todo-list project built with Webpack and ES6 modules
 - Major languages : HTML, CSS & JavaScript
 - Frameworks : Bootstrap
 
+![image](./src/images/preview.png)
+
 ## Getting Started
 
 In this project I built a simple HTML list of To Do tasks using webpack and served by a webpack dev server along with ES6 modules.
